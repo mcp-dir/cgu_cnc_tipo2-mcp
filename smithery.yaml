@@ -1,0 +1,33 @@
+# Smithery configuration for Controladoria-Geral da União: Certidão Negativa Correcional - Agentes Públicos (ePAD, CGU-PAD e Banco de Sanções)
+# Schema: https://smithery.ai/docs/build/project-config
+# Remote HTTP MCP — server hosted at https://api.mcp.ai/p_cgu_cnc_tipo2
+
+name: cgu_cnc_tipo2-mcp
+displayName: "Controladoria-Geral da União: Certidão Negativa Correcional - Agentes Públicos (ePAD, CGU-PAD e Banco de Sanções)"
+description: >
+  Controladoria-Geral da União: Certidão Negativa Correcional - Agentes Públicos (ePAD, CGU-PAD e Banco de Sanções), consulta em fonte oficial. Hospedado pela plataforma, sem credenciais da plataforma, pague por consulta com crédito pré-pago.
+
+version: 0.1.0
+license: MIT
+homepage: https://github.com/mcp-dir/cgu_cnc_tipo2-mcp
+repository: https://github.com/mcp-dir/cgu_cnc_tipo2-mcp
+
+tags:
+  - cgu_cnc_tipo2
+  - brazil
+  - horizontal
+  - read-only
+
+# Remote HTTP MCP — sem startCommand local (servidor já hospedado)
+startCommand:
+  type: http
+  url: https://api.mcp.ai/p_cgu_cnc_tipo2
+
+auth:
+  type: oauth2
+  resourceMetadataUrl: https://api.mcp.ai/p_cgu_cnc_tipo2/.well-known/oauth-protected-resource
+  fallback:
+    type: agent-auth
+    description: >
+      Para clientes sem OAuth 2.1. O agente expõe uma tool authenticate(token).
+      Usuário gera o JWT em https://app.mcp.ai/agent-auth e cola no chat.
