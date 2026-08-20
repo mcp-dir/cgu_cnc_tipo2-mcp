@@ -1,0 +1,17 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.mcp-dir/cgu_cnc_tipo2-mcp",
+  "title": "Controladoria-Geral da União: Certidão Negativa Correcional - Agentes Públicos (ePAD, CGU-PAD e Banco de Sanções)",
+  "description": "Controladoria-Geral da União: Certificate Negativa Correcional - Agentes Públicos (ePAD, CGU-PAD e B",
+  "version": "0.1.0",
+  "repository": {
+    "url": "https://github.com/mcp-dir/cgu_cnc_tipo2-mcp",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://api.mcp.ai/p_cgu_cnc_tipo2"
+    }
+  ]
+}
